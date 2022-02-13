@@ -1,0 +1,4 @@
+Testing a simple text file
+to check whether GIT push 
+works through the command
+line.
