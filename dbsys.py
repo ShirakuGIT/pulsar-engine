@@ -8,7 +8,7 @@ connect = mysqlconnector.connect(
 
 	)
 
-
+# Repeat the same functions for other shit
 def printstuff(stuff):
 
 
@@ -22,10 +22,29 @@ def printstuff(stuff):
 
 	print("\n".join(contacts))
 
-cursor = connect.cursor()
 
-printstuff(cursor)
+# For inserting shit 
+def insertstuff(stuff):
 
-connect.close()
+	first_name = input("Enter first name ")
+	last_name = input("Enter last name ")
+	email = input("Enter email ")
 
-print("Connection established")
+	stuff.execute(f"INSERT into contacts (first_name, last_name, email) values ('{first_name}', '{last_name}', '{email}')")
+
+
+
+
+
+
+# Essential driver code
+if __name__ == "__main__":
+	cursor = connect.cursor()
+
+	insertstuff(cursor)
+
+	printstuff(cursor)
+
+	connect.close()
+
+	print("Connection established")
