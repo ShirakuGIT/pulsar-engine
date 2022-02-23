@@ -1,12 +1,16 @@
 import mariadb as mysqlconnector
 
-connect = mysqlconnector.connect(
-	user = "root",
-	password = "12345678",
-	host = "localhost",
-	db = "cs"
+try:
+	connect = mysqlconnector.connect(
+		user = "root",
+		password = "12345678",
+		host = "localhost",
+		db = "cs"
+		)
+	print("Connection has been established")
+except:
+	print("Error, please try again")
 
-	)
 
 # Repeat the same functions for other shit
 def printstuff(stuff):
@@ -14,7 +18,7 @@ def printstuff(stuff):
 
 	contacts = []
 
-	stuff.execute("SELECT first_name, last_name, email FROM contacts")
+	stuff.execute("SELECT * FROM contacts")
 
 	for (first_name, last_name, email) in stuff:
 
@@ -26,14 +30,11 @@ def printstuff(stuff):
 # For inserting shit 
 def insertstuff(stuff):
 
-	first_name = input("Enter first name ")
-	last_name = input("Enter last name ")
-	email = input("Enter email ")
+	first_name = input("Enter first name\t")
+	last_name = input("Enter last name\t")
+	email = input("Enter email\t")
 
 	stuff.execute(f"INSERT into contacts (first_name, last_name, email) values ('{first_name}', '{last_name}', '{email}')")
-
-
-
 
 
 
@@ -45,6 +46,7 @@ if __name__ == "__main__":
 
 	printstuff(cursor)
 
+	connect.commit()
+
 	connect.close()
 
-	print("Connection established")
