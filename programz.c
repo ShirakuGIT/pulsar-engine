@@ -3,14 +3,12 @@
 # include <stdint.h>
 
 int main() {
+	printf("%s", "Printing numbers upto 100\n");
 
-	int user_int;
-
-	scanf("%20d", &user_int);
-
-	printf("%d", user_int);
-
-	printf("%s", "\n");
+	for (int i=1; i<101; ++i)
+	{
+		printf("%d\n", i);
+	}	
 
 	return 0;
 
