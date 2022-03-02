@@ -5,11 +5,19 @@
 int main() {
 	printf("%s", "Printing numbers upto 100\n");
 
-	for (int i=1; i<101; ++i)
-	{
-		printf("%d\n", i);
-	}	
+	int i;
+	
+	i = 100; 
 
-	return 0;
+	while (i > 0) {
+		printf("%d\n", i);
+		i--;
+
+		
+	}
+
+		
+
+
 
 }
