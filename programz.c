@@ -1,23 +1,21 @@
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 int main() {
-	printf("%s", "Printing numbers upto 100\n");
+    printf("Area of Circle Calculator v1.0\n");
 
-	int i;
-	
-	i = 100; 
+    int r;
 
-	while (i > 0) {
-		printf("%d\n", i);
-		i--;
+    printf("Enter radius of circle\n");
 
-		
-	}
+    scanf("%d", r);
 
-		
+    int area;
 
+    area = 3.14*r*r;
 
+    printf("Area of circle ");
 
+    printf(area);
 }
